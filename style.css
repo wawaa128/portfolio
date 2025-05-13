@@ -11,7 +11,7 @@ body {
     background-color: white;
     color: black;
     font-size: 16px;
-    padding: 2rem;
+    padding: 4rem;
 }
 
 h1 {
@@ -21,4 +21,52 @@ h1 {
 
 li {
     list-style-type: number;
+    font-size: 20px;
 }
+
+#container {
+	display: grid; /* グリッドレイアウト */
+    grid-template-rows: auto auto auto;
+
+}
+#itemA {
+	grid-row: 1 / 3;
+	grid-column: 1 / 2;
+	background: #f88;
+}
+#itemB {
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+	background: #8f8;
+}
+#itemC {
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+	background: rgb(197, 197, 255);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  .flex-item {
+    margin:10px;
+    padding: 30px;
+    background-color: rgb(165, 253, 171);
+  }
+  .box {
+    width: 1fr;  /* 横幅を200pxに指定 */
+    height: 200px; /* 高さを200pxに指定 */
+    animation: image_anime 5s ease infinite; /* 5秒のアニメーションを繰り返す */
+  }
+  @keyframes image_anime {
+    0% {
+      background-image: url(award-B1.jpg); /* 背景画像1を指定 */
+    }
+    50% {
+      background-image: url(award-C4.jpg); /* 背景画像2を指定 */
+    }
+    100% {
+      background-image: url(award-B1.jpg); /* 背景画像1を指定 */
+    }
+  }
