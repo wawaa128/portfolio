@@ -9,9 +9,13 @@ html {
 }
 body {
     background-color: white;
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     padding: 4rem;
+}
+a{
+  color: rgb(100, 128, 255);
+  text-decoration: underline;
 }
 
 h1 {
@@ -29,21 +33,6 @@ li {
     grid-template-rows: auto auto auto;
 
 }
-#itemA {
-	grid-row: 1 / 3;
-	grid-column: 1 / 2;
-	background: #f88;
-}
-#itemB {
-	grid-row: 1 / 2;
-	grid-column: 2 / 3;
-	background: #8f8;
-}
-#itemC {
-	grid-row: 2 / 3;
-	grid-column: 2 / 3;
-	background: rgb(197, 197, 255);
-}
 
 .flex-container {
     display: flex;
@@ -56,7 +45,7 @@ li {
   }
   .box {
     width: 1fr;  /* 横幅を200pxに指定 */
-    height: 200px; /* 高さを200pxに指定 */
+    height: 300px; /* 高さを200pxに指定 */
     animation: image_anime 5s ease infinite; /* 5秒のアニメーションを繰り返す */
   }
   @keyframes image_anime {
@@ -69,4 +58,40 @@ li {
     100% {
       background-image: url(award-B1.jpg); /* 背景画像1を指定 */
     }
+  }
+  .image-switcher {
+    position: relative; /* 親要素として配置の基準にする */
+    width: 300px; /* 切り替えを行う領域の幅 */
+    height: 200px; /* 切り替えを行う領域の高さ */
+    overflow: hidden; /* コンテナからはみ出る部分を隠す */
+  }
+  
+  .image-container {
+    position: absolute; /* 重ねて配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* 背景画像を領域に合わせて表示 */
+    background-position: center; /* 背景画像を中央に配置 */
+    opacity: 0; /* 最初は非表示 */
+    animation: switchImage 9s infinite; /* アニメーションを適用 (例: 9秒ごとに繰り返す) */
+  }
+  
+  .image-container:nth-child(1) {
+    animation-delay: 0s; /* 1枚目は遅延なし */
+  }
+  
+  .image-container:nth-child(2) {
+    animation-delay: 3s; /* 2枚目は3秒後に開始 */
+  }
+  
+  .image-container:nth-child(3) {
+    animation-delay: 6s; /* 3枚目は6秒後に開始 */
+  }
+  
+  @keyframes switchImage {
+    0%, 20% { opacity: 1; } /* 最初と20%の間は表示 */
+    25%, 95% { opacity: 0; } /* 25%から95%の間は非表示 */
+    100% { opacity: 1; } /* 最後は表示 (ループのため) */
   }
