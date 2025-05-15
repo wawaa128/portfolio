@@ -12,6 +12,7 @@ body {
     color: rgb(0, 0, 0);
     font-size: 16px;
     padding: 4rem;
+  background-color: #add0d765; /* AliceBlue */
 }
 a{
   color: rgb(100, 128, 255);
@@ -21,6 +22,15 @@ a{
 h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-weight: bold;
+}
+h2{
+  font-size: 25px;
+  font-weight: bold;
+}
+h3{
+  font-size: 25px;
+  font-weight: bold;
 }
 
 li {
@@ -53,10 +63,10 @@ li {
       background-image: url(award-B1.jpg); /* 背景画像1を指定 */
     }
     50% {
-      background-image: url(award-C4.jpg); /* 背景画像2を指定 */
+      background-image: url(kabotya1.png); /* 背景画像2を指定 */
     }
     100% {
-      background-image: url(award-B1.jpg); /* 背景画像1を指定 */
+      background-image: url(nekotukue.png); /* 背景画像1を指定 */
     }
   }
   .image-switcher {
